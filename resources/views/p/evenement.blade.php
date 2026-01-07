@@ -299,17 +299,18 @@
 }
 
 .object-fit-cover {
-    object-fit: cover !important; /* Remplit tout l'espace proprement */
-    transition: transform 0.5s ease;
+    object-fit: contain !important; /* Affiche l'image ENTIÈRE sans la couper */
+    background-color: #f0f2f5; /* Fond neutre pour les bords */
+    transition: none; /* Retrait du zoom qui pourrait masquer des détails */
 }
 
 .position-relative.bg-light {
-    height: 160px !important; /* Hauteur très compacte */
+    height: 180px !important; /* Légère augmentation pour une meilleure visibilité de l'image entière */
     overflow: hidden;
 }
 
 .card:hover .object-fit-cover {
-    transform: scale(1.1); /* Petit zoom au survol */
+    transform: none; /* Pas de zoom au survol */
 }
 
 .hover-shadow-lg {
