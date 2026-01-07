@@ -304,7 +304,7 @@
 }
 
 .position-relative.bg-light {
-    height: 240px !important; /* Augmentation de la hauteur pour mieux voir l'affiche */
+    height: 200px !important; /* Hauteur réduite pour un rendu plus équilibré */
     overflow: hidden;
 }
 
