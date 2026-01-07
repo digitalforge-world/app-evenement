@@ -154,14 +154,14 @@ class Evenement extends Model
     // Accesseurs pour les URLs des médias
     public function getPhotoUrlAttribute()
     {
-        // Vérifier si la photo existe et n'est pas vide/null
         if ($this->photo && $this->photo !== 'null' && $this->photo !== '') {
-            // Vérifier si le fichier existe réellement
-            if (file_exists(public_path('storage/evenement/photo/' . $this->photo))) {
-                return asset('storage/evenement/photo/' . $this->photo);
-            }
+            // Dans Laravel, asset('storage/...') pointe toujours vers public/storage/...
+            // qui est généralement un lien symbolique vers storage/app/public/...
+            return asset('storage/evenement/photo/' . $this->photo);
         }
-        return asset('images/default-event.jpg'); // Image par défaut
+        
+        // Image de remplacement professionnelle si l'image est manquante
+        return 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
     }
     
     public function getVideoUrlAttribute()

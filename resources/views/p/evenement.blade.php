@@ -189,7 +189,8 @@
                                     <div class="position-relative bg-light" style="height: 180px;">
                                         <img src="{{ $event->photo_url }}"
                                              alt="{{ $event->titre }}"
-                                             class="card-img-top h-100 object-fit-cover">
+                                             class="card-img-top h-100 object-fit-cover"
+                                             loading="lazy">
 
                                         <!-- Badge nouveau -->
                                         @if($isNew)
@@ -298,8 +299,17 @@
 }
 
 .object-fit-cover {
-    object-fit: contain !important; /* Affiche l'image complète sans la couper */
-    background-color: #f8f9fa; /* Fond gris clair pour les espaces vides */
+    object-fit: cover !important; /* Remplit tout l'espace proprement */
+    transition: transform 0.5s ease;
+}
+
+.position-relative.bg-light {
+    height: 240px !important; /* Augmentation de la hauteur pour mieux voir l'affiche */
+    overflow: hidden;
+}
+
+.card:hover .object-fit-cover {
+    transform: scale(1.1); /* Petit zoom au survol */
 }
 
 .hover-shadow-lg {

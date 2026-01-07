@@ -44,6 +44,11 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .event-card:hover .card-img-top {
+            transform: scale(1.1);
         }
 
         .featured-event {
