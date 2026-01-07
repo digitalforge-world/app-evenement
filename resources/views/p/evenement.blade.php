@@ -218,7 +218,7 @@
 
                                     <!-- Contenu -->
                                     <div class="card-body p-3 d-flex flex-column">
-                                        <h5 class="card-title fw-bold text-dark mb-2 line-clamp-2 h6">{{ $event->titre }}</h5>
+                                        <h5 class="card-title fw-bold text-dark mb-2 line-clamp-2 fs-6">{{ $event->titre }}</h5>
                                         <p class="card-text text-muted small mb-3 line-clamp-2">{{ $event->truncated_description }}</p>
 
                                         <!-- Informations pratiques -->
@@ -304,7 +304,7 @@
 }
 
 .position-relative.bg-light {
-    height: 200px !important; /* Hauteur réduite pour un rendu plus équilibré */
+    height: 160px !important; /* Hauteur très compacte */
     overflow: hidden;
 }
 
